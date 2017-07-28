@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<body class="container">
+
+<h3 class="page-header">注册页面</h3>
+
+<form role="form" action="reg" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="username" class="col-md-2 control-label" >用户名:</label>
+        <div>
+            <input style="width: 200px;" type="text" id="username" name="username"/>
+            <span id="usernameSpan"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="col-md-2 control-label" >密码:</label>
+        <div class="com-md-10">
+            <input style="width: 200px;" type="password" id="password" name="password"/>
+        </div>
+    </div>
+
+    <select class="combobox" name="age" >
+        <option>选择年龄</option>
+        <option value="未满18周岁">18周岁以下</option>
+        <option value="已满18周岁">18周岁以上</option>
+
+    </select>
+
+    <div class="row">
+        <div class="col-lg-6">
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" name="hobby" value="篮球">篮球</span>
+
+            </div><!-- /input-group -->
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" name="hobby" value="足球">足球</span>
+
+            </div>
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" name="hobby" value="乒乓球">乒乓球</span>
+
+        </div>
+
+        </div><!-- /.col-lg-6 -->
+        <br>
+        <div class="col-lg-6">
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="radio" name="sex" value="男">男</span>
+            </div><!-- /input-group -->
+
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="radio" name="sex" value="女">女</span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+
+    <div class="form-group">
+        <div style="padding-left: 200px;">
+            <button type="submit" class="btn btn-success btn-default">注册</button>
+        </div>
+    </div>
+
+
+</form>
+</body>
+</html>

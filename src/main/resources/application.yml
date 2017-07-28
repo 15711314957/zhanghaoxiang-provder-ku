@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: service-client
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zhx_test
+    username: root
+    password: 123456
+    thymeleaf:
+        cache: false
+
+  jpa:
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
+server:
+  port: 1002

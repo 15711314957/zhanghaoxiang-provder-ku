@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:float="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .divcss5-right{float:right}
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/update.js"></script>
+</head>
+<body>
+<div  class="divcss5-right" th:text="${session.user.username}"></div>
+
+
+   <table class="table table-striped">
+       <caption>用户列表</caption>
+       <thead>
+       <tr>
+           <th>id</th>
+           <th>姓名</th>
+           <th>年龄</th>
+           <th>性别</th>
+           <th>爱好</th>
+           <th>操作</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr th:each="user,item : ${users}">
+           <td th:text="${user.id}">Onions</td>
+           <td th:text="${user.username}">2.41</td>
+           <td th:text="${user.age}">yes</td>
+           <td th:text="${user.sex}">yes</td>
+           <td th:text="${user.hobby}">yes</td>
+           <td colspan="2">
+               <button th:value="${girl.id}" name="update" class="pull-center" data-toggle="modal" data-target="#myModal3" onclick="update(this)">
+                   修改
+               </button>
+               <a th:href="@{/delete(id=${user.id})}" class="signOut">删除</a>
+           </td>
+       </tr>
+       </tbody>
+   </table>
+<div   class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title" id="myModalLabel3">
+                    修改页面
+                </h4>
+            </div>
+            <div class="modal-body">
+                <body class="container">
+
+                <h3 class="page-header">修改页面</h3>
+
+                <form role="form" action="login" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-md-2 control-label" >用户名:</label>
+                        <div>
+                            <input style="width: 200px;" type="text" id="username" name="username"/>
+                            <span id="usernameSpan"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="col-md-2 control-label" >密码:</label>
+                        <div class="com-md-10">
+                            <input style="width: 200px;" type="password" id="password" name="password"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div style="padding-left: 200px;">
+                            <button type="submit" class="btn btn-success btn-default">登录</button>
+                        </div>
+                    </div>
+
+
+                </form>
+                </body>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+</body>
+</html>
